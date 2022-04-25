@@ -18,18 +18,24 @@ function App() {
       type: "text",
       placeholder: "Username",
       label: "Username",
+      errorMessage:
+        "Username should be 3-16 characters and shouldn't include any special character!",
+      required: true,
+      pattern: "^[A-Za-z0-9]{3,16}$",
     },
     {
       id: 2,
       name: "email",
-      type: "text",
+      type: "email",
       placeholder: "Email",
       label: "Email",
+      errorMessage: "It should be a valid email address!",
+      required: true,
     },
     {
       id: 3,
       name: "birthday",
-      type: "text",
+      type: "date",
       placeholder: "Birthday",
       label: "Birthday",
     },
@@ -37,16 +43,23 @@ function App() {
     {
       id: 4,
       name: "password",
-      type: "password",
+      type: "text",
       placeholder: "Password",
       label: "Password",
+      required: true,
+      pattern: `^(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
+      errorMessage:
+        "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
     },
     {
       id: 5,
       name: "confirmPassword",
-      type: "password",
+      type: "text",
       placeholder: "ConfirmPassword",
       label: "ConfirmPassword",
+      errorMessage: "Passwords don't match!",
+      pattern: values.password,
+      required: true,
     },
   ];
 
